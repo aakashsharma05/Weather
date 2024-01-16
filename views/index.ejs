@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+
+
+
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="header">
+      <h1 id="title">Enter Your City Name</h1>
+      <form action="/search" method="post">
+        <input
+          type="search"
+          name="cityName"
+          placeholder="Chandigarh"
+          id="searchbar"
+        />
+        <input type="submit" value="Search" id="btn" />
+      </form>
+    </div>
+    <% if(locals.obj){ %>
+    <div class="container">
+      <div id="weather-container">
+        <% var link = `https://openweathermap.org/img/wn/${obj.weather[0].icon}@2x.png` %>
+        <img src= <%= link  %> alt="" id = "weather-icon">
+        <div id="city"><%= obj.name %>, <%= obj.sys.country %></div>
+        <div id="temperature"><%= obj.main.temp %>°C</div>
+        <div id="description"><%= obj.weather[0].main %></div>
+      </div>
+      <div class="part2">
+        <div class="cards">
+            <p>Temp Feels</p>
+            <img src="/images/feels_like.svg" alt="" srcset="" class="svg-icon">
+            <p> <%= obj.main.feels_like %>°C</p>
+        </div>
+        <div class="cards">
+            <p>Humidity </p>
+            <img src="/images/humidity.svg" alt="" srcset="" class="svg-icon">
+
+            <p><%= obj.main.humidity %>%</p>
+        </div>
+        <div class="cards">
+            <p>W-Speed</p>
+            <img src="/images/wind_speed.svg" alt="" srcset="" class="svg-icon">
+
+            <p><%= obj.wind.speed %>m/sec </p>
+        </div>
+      </div>
+    </div>
+
+    <% } else if(locals.error){ %>
+    <h2>Please enter a valid city.</h2>
+    <% } %>
+  </body>
+</html>

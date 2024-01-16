@@ -1,0 +1,125 @@
+html{
+    font-size: 10px;
+}
+.background { 
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%; 
+    width: 100%; 
+    background-image: url( "../images/bgimage2.jpg"); 
+    background-size: cover; 
+    background-position:right; 
+    /* filter: blur(5px);  */
+    /* -webkit-filter: blur(8px); */
+    /* background-position: c; */
+    z-index: -1;
+}
+*{
+    font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+#title{
+    color: white;
+    font-size: 6rem;
+    text-align: center;
+    margin: 50px 0;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+    margin: 10px auto;
+}
+#searchbar{
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 8px;
+    width: 90%;
+    min-width: 150px;
+}
+#btn{
+    width: 25%;
+    padding: 10px;
+    min-width: 60px;
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    border-radius: 10px;
+}
+.container {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    width: 30%;
+    min-width: 200px;
+    margin: 20px auto;
+}
+#weather-icon {
+    height: 10rem;
+    width: 10rem;
+}
+#city {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#temperature {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#description {
+    font-size: 3rem;
+    margin-top: 10px;
+    color: #555;
+}
+.part2{
+    margin: 10px 2px;
+    display: flex;
+    justify-content: space-between;
+}
+.svg-icon{
+    height: 5rem;
+    width: 5rem;
+}
+.cards{
+    height: 20vw;
+    width: 32%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    max-height: 180px;
+}
+
+@media (max-width : 800px) {
+    html{
+        font-size: 5px;
+    }
+    /* .cards{
+        font-size: 1rem;
+    } */
+    /* .svg-icon{
+        height: 4rem;
+        width: 4rem;
+    } */
+}
+/* @media (max-width : 430px) {
+    .cards{
+        font-size: 1rem;
+    }
+    .svg-icon{
+        height: 2rem;
+        width: 2rem;
+    }
+} */
